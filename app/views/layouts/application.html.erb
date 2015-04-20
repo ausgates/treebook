@@ -25,8 +25,13 @@
   <!-- </div> -->
 </nav>
 <div class="container">
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <% flash.each do |type, message| %>
+    <div class="alert <%= flash_class type %> alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+        <%= message %>
+    </div>
+   <% end %>
 <%= yield %>
 </div>
 </body>
