@@ -5,8 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   #attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+  has_many :statuses
+
   def full_name
-  	first_name + " " + last_name
+  	self.first_name + " " + self.last_name
   end
 end
 class AddFieldsToUsers < ActiveRecord::Migration

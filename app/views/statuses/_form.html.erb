@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.input :user_id %>
+    <%= f.input :user_id, collection: User.all, label_method: :full_name %>
   </div>
   <div class="field">
     <%= f.input :content %>
